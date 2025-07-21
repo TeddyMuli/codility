@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+def solution(N):
+    factors = set()
+
+    for i in range(1, int(N**0.5)+1):
+        if N % i == 0:
+            factors.add(i)
+            factors.add(N // i)
+
+    return sorted(list(factors))
+
+if __name__ == "__main__":
+    test = 24
+    print(solution(test))
