@@ -5,6 +5,9 @@ def solution(A):
         return 0
 
     current_sum = max_sum = A[0]
+    # we start with A[0] instead of 0 for the following reasons:
+    # 1. we need to consider -ve values
+    # 2. we need atleast one number
     
     for num in A[1:]:
         current_sum = max(num, current_sum + num)
@@ -13,5 +16,5 @@ def solution(A):
     return max_sum
 
 if __name__ == "__main__":
-    test = [3,2,-6,4,0]
+    test = [-5, -1]
     print(solution(test))
