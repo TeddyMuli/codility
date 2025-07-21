@@ -7,7 +7,7 @@ def solution(N):
             factors.add(i)
             factors.add(N // i)
 
-    return sorted(list(factors))
+    return len(factors)
 
 if __name__ == "__main__":
     test = 24
