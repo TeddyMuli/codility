@@ -2,7 +2,6 @@
 class Solution:
     def sortedMatrix(self,N,Mat):
         elements = [Mat[i][j] for i in range(N) for j in range(N)]
-
         elements.sort()
 
         k=0
@@ -10,8 +9,11 @@ class Solution:
             for j in range(N):
                 Mat[i][j] = elements[k]
                 k+=1
-
-        return Mat
+    
+        for i in range(N):
+            for j in range(N):
+                print(Mat[i][j], end=" ")
+            print('\n')
 
 if __name__ == "__main__":
     solution = Solution()
@@ -19,4 +21,4 @@ if __name__ == "__main__":
         [15,25,35,45],
         [27,29,37,48],
         [32,33,39,50]]
-    print(solution.sortedMatrix(4, test))
+    solution.sortedMatrix(4, test)
