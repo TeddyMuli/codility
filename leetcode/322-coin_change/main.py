@@ -1,22 +1,17 @@
+#!/usr/bin/python3
 class Solution(object):
     def coinChange(self, coins, amount):
-        if amount == 0:
-            return 0
+        dp = [float('inf')] * (amount + 1)
+        dp[0] = 0
 
-        result = 0
+        for i in range(1, amount + 1):
+            for coin in coins:
+                if i - coin >= 0:
+                    dp[i] = min(dp[i], dp[i - coin] + 1)
 
-        coins.sort()
-        for coin in reversed(coins):
-            result += amount // coin
-            if result == 0:
-                continue
-            amount = amount % coin
-            if amount == 0:
-                return result
-
-        return -1
+        return dp[amount] if dp[amount] != float('inf') else -1
 
 if __name__ == "__main__":
     sol = Solution()
-    coins = [1, 2, 5, 6, 12]
-    print(sol.coinChange(coins, 11))
+    coins = [2]
+    print(sol.coinChange(coins, 3))
