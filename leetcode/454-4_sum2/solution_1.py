@@ -3,19 +3,15 @@ from collections import defaultdict
 class Solution:
     def fourSumCount(self, nums1, nums2, nums3, nums4):
         count = 0
-        n = len(nums1)
         nums_map = defaultdict(int)
 
-        for i in range(n):
-            for j in range(n):
-                s = nums1[i] + nums2[j]
-                nums_map[s] += 1
+        for num1 in nums1:
+            for num2 in nums2:
+                nums_map[num1+num2] += 1
         
-        for i in range(n):
-            for j in range(n):
-                target = -(nums3[i] + nums4[j])
-                if target in nums_map:
-                    count += nums_map[target]
+        for num3 in nums3:
+            for num4 in nums4:
+                count += nums_map[-num3-num4]
 
         return count
 
