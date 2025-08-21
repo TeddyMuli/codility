@@ -3,6 +3,7 @@ class Solution(object):
     def threeSumMulti(self, arr, target):
         n = len(arr)
         count = 0
+        MOD = 10**9 + 7
 
         for i in range(n):
             for j in range(i+1, n):
@@ -10,7 +11,7 @@ class Solution(object):
                     if arr[i]+arr[j]+arr[k] == target:
                         count += 1
                     
-        return count
+        return count % MOD
 
 if __name__ == "__main__":
     sol = Solution()
