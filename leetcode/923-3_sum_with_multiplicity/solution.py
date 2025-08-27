@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from collections import Counter
 class Solution(object):
     def threeSumMulti(self, arr, target):
         MOD = 10**9 + 7
@@ -24,8 +23,7 @@ class Solution(object):
                 elif x < y == z:
                     n = counter[y]
                     count += counter[x] * (n * (n-1) // 2)
-                else:
-                    if z > y and y > x:
+                elif z > y and y > x:
                         count += counter[x] * counter[y] * counter[z]
                     
         return count % MOD
