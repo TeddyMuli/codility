@@ -1,5 +1,5 @@
 class Solution:
-    def minSubArrayLen(self, target: int, nums: list[int]) -> int:
+    def minSubArrayLen(self, target: int, nums: list[int]) -> int | float:
         left = curr_sum = 0
         min_len = float('inf')
 
