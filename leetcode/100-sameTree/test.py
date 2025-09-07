@@ -1,5 +1,5 @@
 import unittest
-from solution import Solution
+from solution2 import Solution
 
 class BinaryTree:
     def __init__(self, val, left=None, right=None) -> None:
