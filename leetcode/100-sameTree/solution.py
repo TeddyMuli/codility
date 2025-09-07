@@ -6,4 +6,4 @@ class Solution:
         if (not p or not q) or p.val != q.val:
             return False
         
-        return self.sameTree(p.left, q.left) and self.sameTree(p.left, q.left)
+        return self.sameTree(p.left, q.left) and self.sameTree(p.right, q.right)
